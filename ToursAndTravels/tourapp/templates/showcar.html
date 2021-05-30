@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="container-fluid" style="padding-left: 300px;">
+    <div class="row" >
+    <br>
+        <div class="col-md-12">
+        <h2>Car details</h2>
+            {% for car in form %}
+                <div class="card" style="width:800px; height:300px;">
+                <div class="row">
+                </div>
+                <br>
+			        <div class="row">
+                        <div class="col-md-8">
+                            <img class="img-responsive" src="{{car.car_img.url}}" height="250px" width="350px">
+                        </div>
+
+		        	    <div class="col-md-4">
+		    			    <h4>{{car.car_name}}</h4>
+                            <br>
+                            <h4>{{car.car_no}}</h4>
+                            <a href="/delete/{{car.id}}"  id="{{i.id}}">
+                            <button class="btn btn-danger ">Delete</button>
+                            </a>
+                            <br>
+                            <br>
+                            <a href="/update/{{car.id}}"  id = "{{i.id}}">
+                            <button class=" btn-btn-danger ">Update</button>
+                            </a>  
+                        </div>
+                      
+                    </div>      
+                </div>   
+            {% endfor %} 
+         </div>         
+    </div>
+</div>    
+{% endblock %}
+
+
+	
